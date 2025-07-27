@@ -142,16 +142,16 @@ int main()
 
 	std::cout << "5 + 3 = ";
 
-	calculate(5, 3, std::bind(&Calculator::add, &myCalc, std::placeholders::_1, std::placeholders::_1));
+	calculate(5, 3, std::bind(&Calculator::add, &myCalc, std::placeholders::_1, std::placeholders::_2));
 	
 	std::cout << "5 - 3 = ";
-	calculate(5, 3, std::bind(&Calculator::subtract, &myCalc, std::placeholders::_1, std::placeholders::_1)););
+	calculate(5, 3, std::bind(&Calculator::subtract, &myCalc, std::placeholders::_1, std::placeholders::_2));
 
 	std::cout << "5 * 3 = ";
-	calculate(5, 3, std::bind(&Calculator::multiply, &myCalc, std::placeholders::_1, std::placeholders::_1)););
+	calculate(5, 3, std::bind(&Calculator::multiply, &myCalc, std::placeholders::_1, std::placeholders::_2));
 
 	std::cout << "5 / 3 = ";
-	calculate(5, 3, std::bind(&Calculator::divide, &myCalc, std::placeholders::_1, std::placeholders::_1)););
+	calculate(5, 3, std::bind(&Calculator::divide, &myCalc, std::placeholders::_1, std::placeholders::_2));
 
 	//next line is not compiled:
 	ActionFunc method_ = &CustomClass::Method;
